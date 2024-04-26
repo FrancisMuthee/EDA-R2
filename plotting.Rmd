@@ -9,4 +9,63 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+#Generate sample data
+```{r}
+x <- rnorm(500)
+y <- rnorm(500)
+plot(x,y)
+```
+
+```{r}
+M <- cbind(x,y)
+plot(M)
+```
+
+```{r}
+
+
+my_ts <- ts(matrix(rnorm(500), nrow = 500, ncol = 1), start = c(1950,1), frequency = 12)
+head(my_ts)
+my_dates <- seq(as.Date("2005/1/1"), by = "month", length=50)
+head(my_dates)
+my_factor <- factor(mtcars$cyl)
+head(my_factor)
+fun <- function(x) x^2
+fun
+
+```
+#Scaterplot
+```{r}
+par(mfrow = c(2,3))
+plot(x,y, main =" Scatterplot", sub ="scatterplot",cex.main = 2, col = "blue")
+plot(my_factor, main="barplot")
+plot(my_factor, rnorm(32), main="Boxplot")
+plot(my_ts,main="Time series")
+plot(fun, 0,10,main="plot a function")
+```
+
+#Transforming the axis
+
+```{r}
+#plot(s, u, pch = 19, log = "x", 
+    # main = "X-axis transformed")
+#lines(-4:4, -4:4, lwd = 3, col = "red")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
